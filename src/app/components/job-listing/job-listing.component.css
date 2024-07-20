@@ -1,0 +1,197 @@
+/* styles.css */
+
+/* Reset default browser styles */
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+p,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+/* Global styles */
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon,
+.profile-icon {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+
+}
+
+/* Search bar styles */
+.search-bar {
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.search-bar input[type="text"],
+
+.search-bar button {
+  padding: 8px 12px;
+  border: 2px solid #4f8fd3;
+  border-radius: 5px;
+  margin-right: 5px;
+
+}
+
+/* Job list styles */
+.job-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.job-item {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #e7e9ea; /* Add border around the image */
+  border-radius: 200000px;
+}
+
+.job-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 81, 255, 1);
+}
+
+.job-item h2 {
+  margin-bottom: 10px;
+}
+
+.job-item a {
+  text-decoration: none;
+  color: #333;
+}
+
+.job-item a:hover {
+  color: #007bff;
+}
+
+
+
+.profile-icon {
+    font-size: 24px; /* Adjust the icon size */
+}
+
+
+
+footer {
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;  
+  width: 100%;
+}
+
+/* Style for input fields */
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style for the button */
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Optional: Add hover effect for the button */
+button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">Job Portal</a>
+      <ul class="nav">
+        <li class="nav-item"><a [routerLink]="['/company-job-listing', this.company_id]" class="nav-link">My Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/view-apps', this.company_id]" class="nav-link">Applications</a></li>
+        <li class="nav-item"><a [routerLink]="['/company-profile', this.company_id]" class="nav-link">My Profile</a></li>
+      </ul>
+      <button class="navbar-toggler">&#9776;</button>
+    </div>
+  </nav>
+
+<ul>
+    <li *ngFor="let app of applications | async">
+    <h3><a [routerLink]="['/user-profile', app.user_id]">Applicant Name: {{ app.name }}</a></h3>
+    <a *ngIf="app.cv" [href]="app.cv" target="_blank">  {{app.cv}} </a> 
+    </li>
+</ul>

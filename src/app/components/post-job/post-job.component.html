@@ -1,0 +1,58 @@
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="">Job Portal</a>
+    <ul class="nav">
+      <li class="nav-item"><a [routerLink]="['/job-listing', this.companyID]" class="nav-link">Explore Jobs</a></li>
+      <li class="nav-item"><a [routerLink]="['/saved-jobs', this.companyID]" class="nav-link">Saved Jobs</a></li>
+      <li class="nav-item"><a [routerLink]="['/company-profile', this.companyID]" class="nav-link">My Profile</a></li>
+    </ul>
+
+    <button class="navbar-toggler">&#9776;</button>
+  </div>
+</nav>
+
+<div *ngIf="jobForm">
+
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="job-details-form">
+    <h2>Add Job</h2>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="company-name">Company Name:</label>
+      <input type="text" id="company-name" formControlName="companyName" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location" formControlName="location" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" formControlName="salary" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="qualificationsText">Qualifications:</label>
+      <textarea id="qualificationsText" formControlName="qualificationsText" required></textarea>
+      <small class="form-text text-muted">Enter each Qualification on a new line.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="responsibilitiesText">Responsibilities:</label>
+      <textarea id="responsibilitiesText" formControlName="responsibilitiesText" required></textarea>
+      <small class="form-text text-muted">Enter each responsibility on a new line.</small>
+    </div>
+  
+    <button type="submit" [disabled]="jobForm.invalid">Add Job</button>
+  </form>    
+</div>
+

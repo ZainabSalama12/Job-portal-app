@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="">Job Portal</a>
+    <ul class="nav">
+      <li class="nav-item"><a [routerLink]="['/company-job-listing', this.companyID]" class="nav-link">My Jobs</a></li>
+      <li class="nav-item"><a [routerLink]="['/view-apps', this.companyID]" class="nav-link">Applications</a></li>
+      <li class="nav-item"><a [routerLink]="['/company-profile', this.companyID]" class="nav-link">My Profile</a></li>
+    </ul>
+    <button class="navbar-toggler">&#9776;</button>
+  </div>
+</nav>
+
+<h1>{{companyDetails?.companyName}}</h1>
+
+<div>
+  <div *ngIf="companyDetails?.postedJobs && companyDetails?.postedJobs.length > 0; else noJobsMessage">
+  <p><strong>Posted Jobs:</strong></p>
+  <ul>
+      <li *ngFor="let job of companyDetails?.postedJobs; let i =index">
+        <div>
+         <h3>{{ job?.title }}</h3>
+          <button  (click)="editJob(i)">Edit Job</button>
+          &nbsp;
+          <button (click)="deleteJob(i)">Delete Job</button>
+          &nbsp;
+          <button (click)="togglePause(i)" [innerText]="isPaused ? 'Paused' : 'Pause Job'">Pause Job</button>
+
+      </div>
+      </li>
+  </ul>
+  </div>
+</div>
+<ng-template #noJobsMessage>
+  <p>No jobs available. Please add a job.</p>
+</ng-template>
+  <div class="container">
+    <button (click)="goToPostedJobPage()">Add Job</button>
+  </div>
+
+  

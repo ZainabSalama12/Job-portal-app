@@ -1,0 +1,105 @@
+<div>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">Job Portal</a>
+      <ul class="nav">
+        <li class="nav-item"><a [routerLink]="['/job-listing', this.user_id]" class="nav-link">Explore Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/saved-jobs', this.user_id]" class="nav-link">Saved Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/user-profile', this.user_id]" class="nav-link">My Profile</a></li>
+      </ul>
+      
+      
+      <div class="icons">
+        <span class="profile-icon">👤</span>
+      </div>
+      <button class="navbar-toggler">&#9776;</button>
+    </div>
+  </nav>
+
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+  }
+
+  .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+  }
+
+  .form-group {
+      margin-bottom: 20px;
+  }
+
+  label {
+      font-weight: bold;
+      color: #555;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+  }
+
+  button[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+  }
+
+  button[type="submit"]:hover {
+      background-color: #0056b3;
+  }
+</style>
+
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="form-container">
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">E-mail:</label>
+    <input type="text" id="email" formControlName="email" required>
+  </div>
+
+  <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" formControlName="phone" required>
+  </div>
+
+  <div class="form-group">
+    <label for="cv">CV Link:</label>
+    <input type="text" id="cv" formControlName="cv" required>
+  </div>
+
+  <button type="submit" [disabled]="jobForm.invalid">Apply</button>
+</form>
+
+<footer>
+  <p>&copy; 2024 My Company. All rights reserved.</p>
+</footer>

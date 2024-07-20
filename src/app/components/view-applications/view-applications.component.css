@@ -1,0 +1,107 @@
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+p,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon,
+.profile-icon {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+
+/* Style for the list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style for each list item */
+li {
+    margin-bottom: 10px;
+    border: 1px solid#007bff;;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Style for the job title link */
+li h3 a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Style for the company name */
+li a {
+    text-decoration: none;
+    color: #333;
+}

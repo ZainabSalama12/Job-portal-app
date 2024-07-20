@@ -1,0 +1,23 @@
+<label for="userType">Login as:</label>
+<select [(ngModel)]="userType" (change)="onUserTypeChange()" name="userType" id="userType">
+  <option value="company">Company</option>
+  <option value="jobseeker">Job Seeker</option>
+</select>
+
+
+<form [formGroup]="login" (ngSubmit)="onSubmit()" >
+
+    <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" formControlName="email" required>
+    </div>
+  
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" required>
+    </div>
+
+    <button type="submit" [disabled]="login.invalid">Login</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+</form>

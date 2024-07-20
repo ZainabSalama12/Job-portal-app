@@ -1,0 +1,164 @@
+/* styles.css */
+
+/* Reset default browser styles */
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+p,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+/* Global styles */
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon,
+.profile-icon {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+  }
+  .nav-item {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+
+}
+
+
+
+
+
+
+
+.job-details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-details h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.job-details h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.job-details strong {
+  font-weight: bold;
+}
+
+.job-details p {
+  margin-bottom: 10px;
+}
+
+.job-details ul {
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.job-details li {
+  margin-bottom: 5px;
+}
+
+.job-details button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: block; /* Make the button a block-level element */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.job-details button:hover {
+  background-color: #0056b3;
+}
+

@@ -1,0 +1,67 @@
+<div>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">Job Portal</a>
+      <ul class="nav">
+        <li class="nav-item"><a [routerLink]="['/job-listing', this.Id]" class="nav-link">Explore Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/saved-jobs', this.Id]" class="nav-link">Saved Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/user-profile', this.Id]" class="nav-link">My Profile</a></li>
+      </ul>
+
+      <button class="navbar-toggler">&#9776;</button>
+    </div>
+  </nav>
+  
+  <h1 class="card-title" style="text-align: center;">Welcome, {{user?.name}}</h1>
+  <div class="search-bar" style="text-align: center;">
+    <input type="text" placeholder="Search job" [(ngModel)]="search_title">
+    <button type="button" (click)="search()" >Search</button>
+  </div>
+  
+  <ul class="job-items" style="text-align: center;">
+    <ng-container *ngIf="search_title; else allJobs">
+      <li *ngFor="let job of search_results | async">
+        <h3><a [routerLink]="['/job', job.id,Id]">{{ job.title }}</a></h3>
+        <p><strong>Company Name:</strong> {{ job.companyName }}</p> <button type="button" (click)="saveJob(job.id, job.title, job.companyName)">Save Job</button>
+      </li>
+    </ng-container>
+    <ng-template #allJobs>
+      <li *ngFor="let job of jobs | async">
+        <h3><a [routerLink]="['/job', job.id,Id]">{{ job.title }}</a></h3>
+        <p><strong>Company Name:</strong> {{ job.companyName }}</p> <button type="button" (click)="saveJob(job.id, job.title, job.companyName)">Save Job</button>
+      </li>
+    </ng-template>
+  </ul>
+  
+  <p>Filter By Job Type:</p>
+  <select [(ngModel)]="jobTypeFilter" (change)="filterByJobType()">
+    <option value="Full-Time">Full Time</option>
+    <option value="Part-Time">Part Time</option>
+  </select>
+  
+  <p>Filter By Location:</p>
+  <select [(ngModel)]="location" (change)="filterByLocation()">
+    <option value="Cairo">Cairo</option>
+    <option value="Giza">Giza</option>
+    <option value="Alexandria">Alexandria</option>
+  </select>
+  
+  <p>Filter By Salary Range:</p>
+  <input type="text" placeholder="Min Salary" [(ngModel)]="minSalary">
+  <input type="text" placeholder="Max Salary" [(ngModel)]="maxSalary"> <button (click)="filterBySalary()">Apply Filter</button>
+  
+  <footer>
+    <p>&copy; 2024 My Company. All rights reserved.</p>
+  </footer>
+</div>
+
+<style>
+  /* CSS to add background image */
+  .job-list {
+    background-color: rgb(204, 223, 237);
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    
+  }
+</style>

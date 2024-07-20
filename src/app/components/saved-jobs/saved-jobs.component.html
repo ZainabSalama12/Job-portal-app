@@ -1,0 +1,20 @@
+<div>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">Job Portal</a>
+      <ul class="nav">
+        <li class="nav-item"><a [routerLink]="['/job-listing', this.userId]" class="nav-link">Explore Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/saved-jobs', this.userId]" class="nav-link">Saved Jobs</a></li>
+        <li class="nav-item"><a [routerLink]="['/user-profile', this.userId]" class="nav-link">My Profile</a></li>
+      </ul>
+      
+      <button class="navbar-toggler">&#9776;</button>
+    </div>
+  </nav>
+
+<ul>
+    <li *ngFor="let job of userSaved | async">
+    <h3><a [routerLink]="['/job', job.id]">{{ job.job_title }}</a></h3>
+    <p><strong>Company Name:</strong> {{ job.company_name }}</p> 
+    </li>
+</ul>

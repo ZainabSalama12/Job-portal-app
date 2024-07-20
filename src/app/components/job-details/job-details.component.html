@@ -1,0 +1,111 @@
+<div>
+    <nav class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="">Job Portal</a>
+        <ul class="nav">
+          <li class="nav-item"><a [routerLink]="['/job-listing', this.job_id]" class="nav-link">Explore Jobs</a></li>
+          <li class="nav-item"><a [routerLink]="['/saved-jobs', this.job_id]" class="nav-link">Saved Jobs</a></li>
+          <li class="nav-item"><a [routerLink]="['/user-profile', this.job_id]" class="nav-link">My Profile</a></li>
+        </ul>
+        
+        
+        <div class="icons">
+          <span class="profile-icon">👤</span>
+        </div>
+        <button class="navbar-toggler">&#9776;</button>
+      </div>
+    </nav>
+
+<h1 class="card-title" style="text-align: center;">Job details</h1>
+<style style="text-align: center;">
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .job-details {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f0f4f8;
+        border-radius: 8px;
+        box-shadow: 10px 2px 4px rgba(5, 145, 252, 0.1);
+    }
+
+    h1 {
+        /* job details */
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: disc;
+        margin-left: 20px;
+    }
+
+    li {
+        font-size: 16px;
+        color: #777;
+    }
+
+    button  {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+
+<div class="job-details">
+    <h1 style="text-align: center;">{{jobDetails?.title}}</h1>
+    <p><strong>Company Name:</strong> {{ jobDetails?.companyName }}</p>
+    <p><strong>Location:</strong> {{ jobDetails?.location }}</p>
+    <p><strong>Salary:</strong> {{ jobDetails?.salary }}</p>
+    <p><strong>Description:</strong> {{ jobDetails?.description }}</p>
+    <p><strong>Qualifications:</strong></p>
+    <ul>
+        <li *ngFor="let qualification of jobDetails?.qualifications">
+        {{ qualification }}
+        </li>
+    </ul>
+    <p><strong>Responsibilities:</strong></p>
+    <ul>
+        <li *ngFor="let responsibility of jobDetails?.responsabilities">
+            {{ responsibility }}
+        </li>
+    </ul>
+    <button type="button" (click)="navigateToApplication()">Apply</button>
+</div>
+
+<style>
+    /* CSS to add background image */
+    .job-list {
+      background-color: rgb(204, 223, 237);
+      background-size: cover;
+      background-position: center;
+      height: 100vh; 
+      
+    }
+</style>
